@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PZEM Firebase Dashboard</title>
+
+  <!-- Font & Chart.js -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+
+  <!-- File CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header>
+    <h1>PZEM Firebase Dashboard</h1>
+    <div id="timeNow">--:--:--</div>
+  </header>
+
+  <main class="container">
+    <section class="cards">
+      <div class="card"><div class="label">Tegangan</div><div class="big" id="valV">--</div></div>
+      <div class="card"><div class="label">Arus</div><div class="big" id="valI">--</div></div>
+      <div class="card"><div class="label">Daya</div><div class="big" id="valP">--</div></div>
+      <div class="card"><div class="label">Energi</div><div class="big" id="valE">--</div></div>
+      <div class="card"><div class="label">Frekuensi</div><div class="big" id="valF">--</div></div>
+      <div class="card"><div class="label">Power Factor</div><div class="big" id="valPF">--</div></div>
+    </section>
+
+    <section class="charts">
+      <div class="chartCard">
+        <h3>Grafik Daya (W)</h3>
+        <canvas id="powerChart"></canvas>
+      </div>
+      <div class="chartCard">
+        <h3>Grafik Tegangan (V)</h3>
+        <canvas id="voltChart"></canvas>
+      </div>
+    </section>
+
+    <section class="relays">
+      <h3>Status Relay</h3>
+      <div class="relayRow">
+        <div class="relay"><div>Relay 1</div><div id="r1" class="state">OFF</div></div>
+        <div class="relay"><div>Relay 2</div><div id="r2" class="state">OFF</div></div>
+        <div class="relay"><div>Relay 3</div><div id="r3" class="state">OFF</div></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>Realtime data diambil langsung dari Firebase Realtime Database</footer>
+
+  <!-- File JS -->
+  <script type="module" src="app.js"></script>
+</body>
+</html>
